@@ -11,7 +11,7 @@ help:
 
 init: clean
 ifeq ($(shell basename $(shell pwd)),pyproject-pub)
-	$(error won't initialize pyproject-pub in-place)
+	$(error "won't initialize pyproject-pub in-place")
 endif
 	./rename.sh $(name)
 
@@ -21,9 +21,9 @@ endif
 	rm -rf example/
 
 	rm -rf .git
-	git-init 
-	git-add .
-	git-commit -m "Initialized project '$(name)' from template"
+	git init 
+	git add .
+	git commit -m "Initialized project '$(name)' from template"
 
 uninstall:
 	rm -rf $(PATH_INSTALL_SHARE)
